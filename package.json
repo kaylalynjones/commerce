@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "description": "commerce",
   "main": "app/index.js",
+  "bin":{"coveralls" : "./node_modules/coveralls/bin/coveralls.js"},
   "scripts": {
-    "test": "mocha test --recursive -R spec"
+    "test": "mocha test --recursive -R spec",
+    "coveralls" : "./node_modules/mocha/bin/mocha test --recursive -r blanket -R mocha-lcov-reporter | coveralls"
   },
   "repository": {
     "type": "git",
@@ -16,6 +18,11 @@
     "url": "https://github.com/kaylalynjones/commerce/issues"
   },
   "homepage": "https://github.com/kaylalynjones/commerce",
+  "config" : {
+    "blanket" : {
+      "pattern" : "/app/"
+     }
+  },
   "devDependencies": {
     "blanket": "^1.1.6",
     "chai": "^1.9.1",
