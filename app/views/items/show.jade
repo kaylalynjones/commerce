@@ -1,27 +1,16 @@
-doctype html
-html
-  head
-    meta(charset='utf-8')
-    title eCommerce/Details
-    link(rel='stylesheet', href='/css/style.css')
-    body
-      h1 eCommerce
-      nav
-        ul
-          li: a(href='/') Home
-          li: a(href='/about') About
-          li: a(href='/faq') FAQ
-          li: a(href='/items') Items
-          li: a(href='items/init') Create an Item
-      
-      div(style='backgrounf-color:#{item.color}')
-            span= item.name
-            span #{item.dimensions.length} x #{item.dimensions.width} x #{item.dimensions.height}
-            span= item.weight
-            span= item.quantity
-            span= item.msrp
-            span= item.percentOff
-            span= item.cost()
-            form(method='post', action='/items/#{item._id}/delete')
-              button Delete Item
+extends ../shared/template
+
+block content
+
+  .show(style='background-color:#{item.color}')
+        h3= item.name
+        div #{item.dimensions.length}in x #{item.dimensions.width}in x #{item.dimensions.height}in
+        div #{item.weight}lbs
+        div= item.quantity
+        div $#{item.msrp}
+        div #{item.percentOff}%
+        div $#{item.cost()}
+        form(method='post', action='/items/#{item._id}')
+          input(type='hidden', name='_method', value='delete')
+          button Delete Item
 

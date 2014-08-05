@@ -72,3 +72,21 @@ button {
 button:hover {
   background-color: mediumseagreen;
 }
+.show {
+  clear: both;
+  text-align: center;
+  width: 50%;
+  margin: 10px auto;
+  
+}
+.show div {
+  padding: 20px;
+}
+.show h3 {
+  padding-top: 10px;
+}
+h2 {
+  clear: both;
+  width: 10%;
+  text-align: center;
+}
