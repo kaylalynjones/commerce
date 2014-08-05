@@ -62,4 +62,3 @@ module.exports = Item;
    var item = _.create(Item.prototype, obj);
      return item;
     }
-//

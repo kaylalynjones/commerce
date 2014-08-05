@@ -11,16 +11,24 @@ html
           li: a(href='/') Home
           li: a(href='/about') About
           li: a(href='/faq') FAQ
-      each item in items
-        ul
-          li= item.name
-          li= item.dimensions.l
-          li= item.dimensions.w
-          li= item.dimensions.h
-          li= item.weight
-          li= item.color
-          li= item.quantity
-          li= item.msrp
-          li= item.percentOff
-          li= item.cost()
+          li: a(href='/items') Items
+          li: a(href='items/init') Create an Item
+      table
+        thead
+          th Name
+          th Dimensions
+          th Weight
+          th Quantity
+          th MSRP
+          th % off
+          th cost
+        each item in items
+          tr(style='background-color: #{item.color};')
+            td: a(href='/items/#{item._id}')= item.name
+            td #{item.dimensions.l} x #{item.dimensions.w} x #{item.dimensions.h}
+            td= item.weight
+            td= item.quantity
+            td= item.msrp
+            td= item.percentOff
+            td= item.cost()
 

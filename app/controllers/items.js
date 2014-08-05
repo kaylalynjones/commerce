@@ -7,7 +7,7 @@ exports.init = function(req, res){
 };
 
 exports.create = function(req, res){
-  console.log(req.body);
+ // console.log(req.body);
   var item = new Item(req.body);
   item.save(function(){
     res.redirect('/');
@@ -20,4 +20,15 @@ exports.index = function(req,res){
   });
 };
 
+exports.show = function(req,res){
+  Item.findById(req.params.id, function(item){
+    res.render( 'items/show',{item:item});
+  });
+};
 
+
+exports.destroy = function(req,res){
+  Item.deleteById(req.params.id, function(item){
+    res.redirect('/items');
+  });
+};
