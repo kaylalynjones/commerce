@@ -2,7 +2,7 @@ doctype html
 html
   head
     meta(charset='utf-8')
-    title eCommerce
+    title eCommerce/Details
     link(rel='stylesheet', href='/css/style.css')
     body
       h1 eCommerce
@@ -16,7 +16,7 @@ html
       
       div(style='backgrounf-color:#{item.color}')
             span= item.name
-            span #{item.dimensions.l} x #{item.dimensions.w} x #{item.dimensions.h}
+            span #{item.dimensions.length} x #{item.dimensions.width} x #{item.dimensions.height}
             span= item.weight
             span= item.quantity
             span= item.msrp

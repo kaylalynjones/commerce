@@ -18,9 +18,9 @@ describe('Item', function(){
 
   beforeEach(function(done){
     Item.collection.remove(function(){
-      var o1 = {name:'iPad',   dimensions:{l:'3', w:'4', h:'5'}, weight:'2.5', color:'pink',   quantity:'30', msrp:'200', percentOff:'5'};
-      var o2 = {name:'iMac',   dimensions:{l:'4', w:'5', h:'6'}, weight:'3.5', color:'orange', quantity:'40', msrp:'250', percentOff:'15'};
-      var o3 = {name:'iWatch', dimensions:{l:'7', w:'8', h:'8'}, weight:'4.5', color:'red',    quantity:'50', msrp:'300', percentOff:'25'};
+      var o1 = {name:'iPad',   dimensions:{length:'3', width:'4', height:'5'}, weight:'2.5', color:'pink',   quantity:'30', msrp:'200', percentOff:'5'};
+      var o2 = {name:'iMac',   dimensions:{length:'4', width:'5', height:'6'}, weight:'3.5', color:'orange', quantity:'40', msrp:'250', percentOff:'15'};
+      var o3 = {name:'iWatch', dimensions:{length:'7', width:'8', height:'8'}, weight:'4.5', color:'red',    quantity:'50', msrp:'300', percentOff:'25'};
 
       i1 = new Item(o1);
       i2 = new Item(o2);
@@ -38,14 +38,14 @@ describe('Item', function(){
 
   describe('constructor', function(){
     it('should create a new Item object', function(){
-      var o = {name:'iPad', dimensions:{l:'3', w:'4', h:'5'}, weight:'2.5', color:'pink', quantity:'30', msrp:'200', percentOff:'5'};
+      var o = {name:'iPad', dimensions:{length:'3', width:'4', height:'5'}, weight:'2.5', color:'pink', quantity:'30', msrp:'200', percentOff:'5'};
       var ipad = new Item(o);
 
       expect(ipad).to.be.instanceof(Item);
       expect(ipad.name).to.equal('iPad');
-      expect(ipad.dimensions.l).to.equal(3);
-      expect(ipad.dimensions.w).to.equal(4);
-      expect(ipad.dimensions.h).to.equal(5);
+      expect(ipad.dimensions.length).to.equal(3);
+      expect(ipad.dimensions.width).to.equal(4);
+      expect(ipad.dimensions.height).to.equal(5);
       expect(ipad.weight).to.be.closeTo(2.5, 0.1);
       expect(ipad.color).to.equal('pink');
       expect(ipad.quantity).to.equal(30);
@@ -56,7 +56,7 @@ describe('Item', function(){
 
   describe('#cost', function(){
     it('should compute cost for an item', function(){
-      var o = {name:'iPad', dimensions:{l:'3', w:'4', h:'5'}, weight:'2.5', color:'pink', quantity:'30', msrp:'200', percentOff:'5'};
+      var o = {name:'iPad', dimensions:{length:'3', width:'4', height:'5'}, weight:'2.5', color:'pink', quantity:'30', msrp:'200', percentOff:'5'};
       var ipad = new Item(o);
       var cost = ipad.cost();
 
@@ -66,7 +66,7 @@ describe('Item', function(){
 
   describe('#save', function(){
     it('should save an item to the database', function(done){
-      var o = {name:'iPad', dimensions:{l:'3', w:'4', h:'5'}, weight:'2.5', color:'pink', quantity:'30', msrp:'200', percentOff:'5'};
+      var o = {name:'iPad', dimensions:{length:'3', width:'4', height:'5'}, weight:'2.5', color:'pink', quantity:'30', msrp:'200', percentOff:'5'};
       var ipad = new Item(o);
       ipad.save(function(){
         expect(ipad._id).to.be.instanceof(Mongo.ObjectID);

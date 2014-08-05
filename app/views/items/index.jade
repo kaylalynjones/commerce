@@ -20,12 +20,12 @@ html
           th Weight
           th Quantity
           th MSRP
-          th % off
-          th cost
+          th % Off
+          th Cost
         each item in items
           tr(style='background-color: #{item.color};')
             td: a(href='/items/#{item._id}')= item.name
-            td #{item.dimensions.l} x #{item.dimensions.w} x #{item.dimensions.h}
+            td #{item.dimensions.length} x #{item.dimensions.width} x #{item.dimensions.height}
             td= item.weight
             td= item.quantity
             td= item.msrp

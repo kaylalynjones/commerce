@@ -1,5 +1,64 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700);
+body {
+ font-family: 'Source Sans Pro', sans-serif;
+ font-size: 1em;
+ margin: 0 auto;
+}
+h1 {
+  font-size: 3em;
+  float: left;
+  margin: 40px;
+  border-bottom: 10px double #000;
+}
 nav ul {
-  text-decoration: none;
   list-style: none;
+  float: right;
+  display: inline-flex;
+  padding-right: 40px;
+}
+nav ul li {
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.3em;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  font-weight: 400;
+}
+a:active {
+  font-weight: 400;
+}
+table {
+  border-spacing: 0;
+  padding: 20px;
+  margin: 0 auto;
+  clear: both;
+  table-layout: fixed;
+}
+th, tr {
+  padding: 20px;
+}
+td {
+  padding: 10px;
 
+}
+form {
+  clear: both;
+}
+input, button {
+  display:block;
+  width:200px;
+  height:20px;
+  font-size:16px;
+  margin:10px;
+}
+button {
+  height:40px;
 }
