@@ -26,6 +26,7 @@ nav ul li {
 a {
   text-decoration: none;
 }
+a,
 a:visited {
   color: black;
 }
@@ -47,10 +48,16 @@ th, tr {
 }
 td {
   padding: 10px;
-
+}
+legend {
+  border: 3px dotted #eee;
+  padding: 40px;
+  margin: 10px;
 }
 form {
   clear: both;
+  width: 220px;
+  margin: 0 auto;
 }
 input, button {
   display:block;
@@ -61,4 +68,7 @@ input, button {
 }
 button {
   height:40px;
+}
+button:hover {
+  background-color: mediumseagreen;
 }
